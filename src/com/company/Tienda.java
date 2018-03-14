@@ -5,5 +5,4 @@ public class Tienda {
     String direccion;
     int telefono;
     String ubicacion;
-
 }
