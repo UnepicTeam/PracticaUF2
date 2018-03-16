@@ -14,6 +14,5 @@ public class Veterinario {
     int vacunacion;
     int chipado;
     boolean urgenciaFueraHorario;
-String Hola;
     Boolean peluqueria;
 }
