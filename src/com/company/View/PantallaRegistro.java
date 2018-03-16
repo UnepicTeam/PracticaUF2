@@ -1,4 +1,7 @@
-package com.company;
+package com.company.View;
 
 public class PantallaRegistro {
+
+
+
 }
