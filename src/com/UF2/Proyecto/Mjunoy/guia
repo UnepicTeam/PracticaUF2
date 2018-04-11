@@ -1,0 +1,78 @@
+Una aplicación para buscar veterinarios y tiendas de mascotas
+
+Tendra la direccion de los centros y tiendas, horarios de apertura, telefono y web si tienen.
+
+En el caso de los veterianarios tambien saldra la informacion de precios(visita estandar,visita urgencias,vacunacion
+ y chipado) tambien si tiene urgencias fuera del horario de apertura.
+
+Las tiendas indicaran a que tipo de animales estan horientadas(perros, gatos, animales exoticos).
+tambien si tienen peluqueria canina..
+
+Tanto en las tiendas como en los veterinarios se podran puntuar de 0 a 5 estrellas
+
+Los usuarios puede buscar por localidad , especializacion o puntuacion.
+
+Un sistema para que tiendas o veterinarios nuevos puedan darse de alta en la aplicacion ( rellenaran un formulario y
+este se guardara en la app pero solo se mostrara cuando el administrador lo revise)
+Sprint 1
+
+------------------------------------------------------------------------------------------
+VeterinApp
+
+Buscar
+Registrar v/t
+Administrar
+
+------------------------------------------------------------------------------------------
+VeterinApp :: Buscar
+
+Tienda
+Veterinario
+
+------------------------------------------------------------------------------------------
+VeterinApp :: Buscar :: Tienda
+
+Por nombre
+Por localidad
+Por puntuacion
+Por especializacion
+Por peluqueria
+Atrás
+
+------------------------------------------------------------------------------------------
+VeterinApp :: Buscar :: Tienda :: Por nombre
+
+Nombre:
+Mascota
+
+ID   Tienda          Direccion   Horario    Telefono
+#1   Mis Mascotas    C/skafjs    16:18      9385982357
+#2   Mascota total   C/aggas	81:90		2385723523
+#3   Mascota ya!     C/aggas	81:90		2385723523
+
+3
+
+------------------------------------------------------------------------------------------
+VeterinApp :: Tienda :: Mascota Ya!
+
+Direccion:
+Horario:
+Telefono:
+Web:
+Especializacion:
+Peluqueria:
+Valoracion: * * * * *
+
+Valorar
+Atrás
+
+
+------------------------------------------------------------------------------------------
+VeterinApp :: Veterinaria :: Mascota Ya! :: Valorar
+Puntuacion 0-5:
+3
+
+------------------------------------------------------------------------------------------
+VeterinApp :: Registrar
+
+Tipo (v/t):
