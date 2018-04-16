@@ -5,7 +5,7 @@ import sun.swing.BakedArrayList;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Veterianario {
+public class Veterinario {
     public String nombre;
     public String direccion;
     public int telefono;

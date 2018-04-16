@@ -86,10 +86,13 @@ public class PantallaRegistrarVeterinario {
                 // si la opcion es registrar un veterianario o tienda generare
                 // una pantalla de registro y la iniciare
                 new PantallaRegistrar().iniciar();
-            } else if (opcion.equals("2")) {
+            }else if (opcion.equals("2")) {
+                //si el usuario a dedicido ir al menu principal creo una nueva pantalla principal y la inicio
+                new PantallaPrincipal().iniciar();
+            }else if (opcion.equals("3")) {
                 //si la opcion es buscar creare una pantalla busqueda y la iniciare
                 new PantallaBuscar().iniciar();
-            } else if (opcion.equals("3")){
+            } else if (opcion.equals("4")){
                 System.out.println("Gracias por usar VeteriApp");
                 salir = true;
             }else{

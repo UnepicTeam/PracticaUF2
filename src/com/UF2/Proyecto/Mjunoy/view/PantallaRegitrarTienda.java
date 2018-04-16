@@ -45,35 +45,45 @@ public class PantallaRegitrarTienda {
         if (pelu.equals("si")){
             peluqueria = true;
         }
-        //creo una variable tipo boolean llamada registro que guardara el resultado del manager de tiendas
-        boolean registro = ManagerTiendas.crearTienda(nombre,direccion,telefono,horario,web,especializacion,peluqueria);
+        //Inicio el manager de tiendas y creo una tienda nueva.
+        ManagerTiendas.crearTienda(nombre,direccion,telefono,horario,web,especializacion,peluqueria);
 
-        // si el manager de tiendas retorna true es que la tienda se a generado correctamente en caso contrario
-        // es por que a havido un error en el registro en los dos casos informaremos al usuario
 
-        if (registro){
-            System.out.println("Su tienda se a registrado de forma correcta");
-        }else{
-            System.out.println("Lo sentimos hemos tenido un problema y su tienda no se a podido registrar.");
-            System.out.println("Intentelo de nuevo mas tarde.");
-        }
+        System.out.println("Su tienda se a registrado de forma correcta");
+
 
         // una vez echo esto preguntaremos al usuario que desea hacer
 
-        System.out.println();
-        System.out.println("Que desea hacer a continuacion:");
-        System.out.println();
-        System.out.println("1-Registrar otra tienda o veterinario.");
-        System.out.println("2-Ir al menu principal.");
-        System.out.println("3-Buscar tienda o veterinario");
-        System.out.println("4-Salir");
+        boolean salir=false;
+        do {
+            System.out.println("Que desea hacer a continuacion:");
+            System.out.println();
+            System.out.println("1-Registrar otra tienda o veterinario.");
+            System.out.println("2-Ir al menu principal.");
+            System.out.println("3-Buscar tienda o veterinario");
+            System.out.println("4-Salir de la aplicacion");
 
-        String opcion = scanner.nextLine();
+            // guardo en una variable la opcion seleccionada por el usuario
+            String opcion = scanner.nextLine();
 
-        //if (opcion.equals("1")){
-
-        //}
-        // aqui iran los if que comprovaran que a seleccionado el usuario por ahora solo cierro la app
-        System.exit(0);
+            //compruevo que a seleccionado el usuario
+            if (opcion.equals("1")) {
+                // si la opcion es registrar un veterianario o tienda generare
+                // una pantalla de registro y la iniciare
+                new PantallaRegistrar().iniciar();
+            }else if (opcion.equals("2")) {
+                //si el usuario a dedicido ir al menu principal creo una nueva pantalla principal y la inicio
+                new PantallaPrincipal().iniciar();
+            }else if (opcion.equals("3")) {
+                //si la opcion es buscar creare una pantalla busqueda y la iniciare
+                new PantallaBuscar().iniciar();
+            } else if (opcion.equals("4")){
+                System.out.println("Gracias por usar VeteriApp");
+                salir = true;
+            }else{
+                System.out.println("Opcion incorrecta");
+                System.out.println("Seleccione otra vez");
+            }
+        }while (!salir);
     }
 }
