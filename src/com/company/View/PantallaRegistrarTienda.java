@@ -1,10 +1,12 @@
 package com.company.View;
 
+import com.company.Mannager.ManagerTiendas;
+
 import java.util.Scanner;
 
 public class PantallaRegistrarTienda {
 
-    public void iniciar (){
+    public static void iniciar (){
 
         Scanner scanner = new Scanner(System.in);
 
@@ -43,7 +45,7 @@ public class PantallaRegistrarTienda {
             peluqueria = true;
         }
         //creo una variable tipo boolean llamada registro que guardara el resultado del manager de tiendas
-        ManagerTiendas.(nombre,direccion,telefono,horario,web,especializacion,peluqueria);
+        ManagerTiendas.crearTienda(nombre,direccion,telefono,horario,web,especializacion,peluqueria);
 
         // si el manager de tiendas retorna true es que la tienda se a generado correctamente en caso contrario
         // es por que a havido un error en el registro en los dos casos informaremos al usuario

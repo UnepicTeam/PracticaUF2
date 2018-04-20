@@ -18,20 +18,14 @@ public class PantallaBuscar {
         //guardo la opcion en una variable
         String opcion = scanner.nextLine();
         String nombre="";
-
-//        if (opcion.equals("1")){
-//            System.out.println("Nombre de la tienda:");
-//            nombre = scanner.nextLine();
-//            //String tienda = ManagerTiendas.buscarTienda(nombre);
-//            System.out.println(tienda);
-//        }else if (opcion.equals("2")){s
-//            System.out.println("Nombre del veterinario:");
-//            nombre = scanner.nextLine();
-//            //List<Veterinario> veterianariosEncontrados = ManagerVeterinarios.buscarVeterinario(nombre);
-//
-//            for (Veterinario veterianario : veterianariosEncontrados) {
-//                System.out.println(veterianario.nombre + " " + veterianario.direccion);
-//            }
-//        }
     }
+
+    public static boolean comprobarTienda(String nombre) {
+       return true;
+    }
+
+    public static boolean comprobarVeterinario(String nombre) {
+        return true;
+    }
+
 }
