@@ -13,28 +13,32 @@ public class PantallaBuscar {
 
         Scanner scanner = new Scanner(System.in);
 
+        boolean salir=false;
+
+        do{
         System.out.println("Que desea buscar:");
         System.out.println();
         System.out.println("1-Tienda");
         System.out.println("2-Veterinario");
+        System.out.println("3-Volver a la pantalla de inicio.");
+        System.out.println("4-Salir.");
 
         //guardo la opcion en una variable
         String opcion = scanner.nextLine();
-        String nombre="";
 
         if (opcion.equals("1")){
-            System.out.println("Nombre de la tienda:");
-            nombre = scanner.nextLine();
-           // String tienda = ManagerTiendas.buscarTienda(nombre);
-           // System.out.println(tienda);
+            new PantallaBuscarTienda().iniciar();
         }else if (opcion.equals("2")){
-            System.out.println("Nombre del veterinario:");
-            nombre = scanner.nextLine();
-            List<Veterinario> veterianariosEncontrados = ManagerVeterianarios.buscarVeterinario(nombre);
-
-            for (Veterinario veterinario : veterianariosEncontrados) {
-                System.out.println(veterinario.nombre + " " + veterinario.direccion);
-            }
+            new PantallaBuscarVeterinario().iniciar();
+        }else if (opcion.equals("3")){
+            new PantallaPrincipal().iniciar();
+        }else if (opcion.equals("4")){
+            System.out.println("Gracias por usar nuestra aplicacion");
+            salir=true;
+        }else{
+            System.out.println("Opcion incorrecta seleccione otra vez");
         }
+
+        }while (!salir);
     }
 }
