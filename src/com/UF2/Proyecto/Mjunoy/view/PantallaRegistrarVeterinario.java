@@ -37,19 +37,19 @@ public class PantallaRegistrarVeterinario {
         String especializacion = scanner.nextLine();
 
         System.out.println("Introduzca el precios de visita estandar:");
-        precios.add(scanner.nextDouble());
+        double visita_N=scanner.nextDouble();
         scanner.nextLine();
 
         System.out.println("Introduzca el precio de la visita de urgencias:");
-        precios.add(scanner.nextDouble());
+        double visita_U=scanner.nextDouble();
         scanner.nextLine();
 
         System.out.println("Introduzca precio vacunacion:");
-        precios.add(scanner.nextDouble());
+        double vacuna=scanner.nextDouble();
         scanner.nextLine();
 
         System.out.println("Introduzca el precio de implantacion microchip:");
-        precios.add(scanner.nextDouble());
+        double chipado=scanner.nextDouble();
         scanner.nextLine();
 
 
@@ -64,7 +64,8 @@ public class PantallaRegistrarVeterinario {
             urgencias24 = true;
         }
 
-        ManagerVeterianarios.crearVeterinario(nombre,direccion,telefono,horario,web,especializacion,precios,urgencias24);
+        ManagerVeterianarios.crearVeterinario(nombre,direccion,telefono,horario,web,especializacion,visita_N,visita_U,
+                vacuna,chipado,urgencias24);
 
         System.out.println("Su Veterinario se a registrado de forma correcta");
         System.out.println();

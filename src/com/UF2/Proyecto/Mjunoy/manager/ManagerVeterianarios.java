@@ -26,9 +26,9 @@ public class ManagerVeterianarios {
         List<Veterinario> todos_veterinarios = Database.selectAllVeterinarios();
         List<Veterinario> veterinarios = new ArrayList<>();
 
-        for (int i = 0; i <todos_veterinarios.size() ; i++) {
-            if (todos_veterinarios.get(nombre).equals(nombre)){
-                veterinarios.add(todos_veterinarios.get(i));
+        for (Veterinario veterinario: todos_veterinarios) {
+            if (veterinario.nombre.equals(nombre)){
+                veterinarios.add(veterinario);
             }
 
         }
@@ -38,9 +38,9 @@ public class ManagerVeterianarios {
         List<Veterinario> todos_veterinarios = Database.selectAllVeterinarios();
         List<Veterinario> veterinarios = new ArrayList<>();
 
-        for (int i = 0; i <todos_veterinarios.size() ; i++) {
-            if (todos_veterinarios.get(especializacion).equals(especializacion)){
-                veterinarios.add(todos_veterinarios.get(i));
+        for (Veterinario veterinario: todos_veterinarios) {
+            if (veterinario.especializacion.equals(especializacion)){
+                veterinarios.add(veterinario);
             }
 
         }
@@ -51,9 +51,9 @@ public class ManagerVeterianarios {
         List<Veterinario> todos_veterinarios = Database.selectAllVeterinarios();
         List<Veterinario> veterinarios = new ArrayList<>();
 
-        for (int i = 0; i <todos_veterinarios.size() ; i++) {
-            if (todos_veterinarios.get(puntuacion) >= puntuacion ){
-                veterinarios.add(todos_veterinarios.get(i));
+        for (Veterinario veterinario: todos_veterinarios) {
+            if (veterinario.puntuacion >= puntuacion ){
+                veterinarios.add(veterinario);
             }
 
         }

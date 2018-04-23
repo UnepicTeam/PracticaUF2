@@ -11,7 +11,7 @@ import java.util.List;
 public class Database {
 
     static final String url = "jdbc:sqlite:BBDD/veterinapp.db";
-    static final int DATABASE_VERSION =1;
+    static final int DATABASE_VERSION = 8;
 
     static Database instance;
     static Connection conn;
@@ -21,6 +21,7 @@ public class Database {
             instance = new Database();
 
             try {
+
                 conn = DriverManager.getConnection(url);
             } catch (SQLException e){
                 System.out.println(e.getMessage());
@@ -62,9 +63,9 @@ public class Database {
 
     void deleteTables(){
         try (Statement stmt = conn.createStatement()) {
-            stmt.execute("DROP TABLE IF EXIST tiendas;");
-            stmt.execute("DROP TABLE IF EXIST veterinarios");
-            stmt.execute("DROP TABLE IF EXIST administradores");
+            stmt.execute("DROP TABLE IF EXISTS tiendas");
+            stmt.execute("DROP TABLE IF EXISTS veterinarios");
+            stmt.execute("DROP TABLE IF EXISTS administradores");
         } catch (SQLException e){
             System.out.println(e.getMessage());
         }
@@ -72,24 +73,24 @@ public class Database {
 
     void createTable(){
         try (Statement stmt = conn.createStatement()) {
-            stmt.execute("CREATE TABLE IF NOT EXIST tiendas (" +
+            stmt.execute("CREATE TABLE IF NOT EXISTS tiendas (" +
                     "codigo_T integer primary key autoincrement," +
-                    "nombre text(100)," +
-                    "direccion text(200)," +
+                    "nombre text," +
+                    "direccion text," +
                     "telefono integer," +
-                    "horario text(35)," +
-                    "web text(200)," +
-                    "especializacion text(20)," +
+                    "horario text," +
+                    "web text," +
+                    "especializacion text," +
                     "peluqueria boolean," +
                     "puntuacion integer);");
-            stmt.execute("CREATE TABLE IF NOT EXIST veterinarios (" +
+            stmt.execute("CREATE TABLE IF NOT EXISTS veterinarios (" +
                     "codigo_V integer primary key autoincrement," +
-                    "nombre text(100)," +
-                    "direccion text(200)," +
+                    "nombre text," +
+                    "direccion text," +
                     "telefono integer," +
-                    "horario text(35)," +
-                    "web text(200)," +
-                    "especializacion text(20)," +
+                    "horario text," +
+                    "web text," +
+                    "especializacion text," +
                     "visita_N real," +
                     "visita_U real," +
                     "vacuna real," +
@@ -98,8 +99,8 @@ public class Database {
                     "puntuacion integer);");
             stmt.execute("CREATE TABLE administradores (" +
                     "codigo_A integer primary key autoincrement," +
-                    "usuario text(50)," +
-                    "contraseña text(50));");
+                    "usuario text," +
+                    "contraseña text);");
 
         }catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -119,6 +120,7 @@ public class Database {
             pstmt.setString(6,tienda.especializacion);
             pstmt.setBoolean(7,tienda.peluqueria);
             pstmt.setInt(8,0);
+            pstmt.execute();
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }
@@ -143,6 +145,7 @@ public class Database {
             pstmt.setDouble(10,veterinario.chipado);
             pstmt.setBoolean(11,veterinario.urgencias24);
             pstmt.setInt(12,0);
+            pstmt.execute();
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }
@@ -150,11 +153,12 @@ public class Database {
 
     public static void insertAdministrador(Administrador administrador){
         String sql="INSERT INTO administradores(usuario,contraseña)" +
-                "VALUES (?,?,)";
+                "VALUES (?,?)";
 
         try (PreparedStatement pstmt= conn.prepareStatement(sql)){
             pstmt.setString(1,administrador.usuario);
             pstmt.setString(2,administrador.contraseña);
+            pstmt.execute();
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }
@@ -172,6 +176,7 @@ public class Database {
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
+
                 Tienda tienda = new Tienda(rs.getString("nombre"),
                         rs.getString("direccion"),
                         rs.getInt("telefono"),

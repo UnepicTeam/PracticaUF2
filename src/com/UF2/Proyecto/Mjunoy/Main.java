@@ -29,9 +29,9 @@ public class Main {
 
         List<Tienda> tiendasBase = db.selectAllTiendas();
 
-        for (Tienda tiendaE: tiendasBase) {
+        for (Tienda tienda1: tiendasBase) {
             System.out.println
-                    (String.format("%-10s", tiendaE.nombre) + " | " + String.format("%-10s", tiendaE.direccion));
+                    (String.format("%-10s", tienda1.nombre) + " | " + String.format("%-10s", tienda1.direccion));
         }
 
     }
