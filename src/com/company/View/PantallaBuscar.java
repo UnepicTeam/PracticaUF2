@@ -25,6 +25,7 @@ public class PantallaBuscar {
     }
 
     public static boolean comprobarVeterinario(String nombre) {
+
         return true;
     }
 
