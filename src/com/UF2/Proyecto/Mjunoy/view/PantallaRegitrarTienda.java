@@ -28,11 +28,16 @@ public class PantallaRegitrarTienda {
         System.out.println();
 
 
+
         while (!esValido) {
 
 
             System.out.println("Nombre de la tienda:");
             nombre = scanner.nextLine();
+
+
+
+
 
             // Control de errores que si no cumple este requisito el campo,nos pedira volver a introducirlo//
 
@@ -92,10 +97,10 @@ public class PantallaRegitrarTienda {
         telefono = scanner.nextInt();
         scanner.nextLine();
 
-        
 
 
-        if (telefono.length() > 13) {
+
+        if (length() > 13) {
             System.out.println("Maximo de 200");
             esValido = false;
         } else {

@@ -6,7 +6,7 @@ import com.UF2.Proyecto.Mjunoy.manager.ManagerVeterianarios;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+//
 public class PantallaRegistrarVeterinario {
 
     public void iniciar(){
@@ -265,6 +265,7 @@ public class PantallaRegistrarVeterinario {
         }
 
     }
+
 
 //
 //    ManagerVeterianarios.crearVeterinario(nombre, direccion, telefono, horario, web, especializacion, precios, urgencias24);
