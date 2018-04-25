@@ -9,6 +9,8 @@ public class Tienda {
     public String especializacion;
     public boolean peluqueria;
     public int puntuacion;
+    public boolean mostrar;
+    public int codigo;
 
     public Tienda(){
 
@@ -16,7 +18,7 @@ public class Tienda {
 
     public Tienda(String nombre, String direccion, int telefono,
                   String horario, String web, String especializacion,
-                  boolean peluqueria, int puntuacion) {
+                  boolean peluqueria, int puntuacion, boolean mostrar,int codigo) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -25,5 +27,7 @@ public class Tienda {
         this.especializacion = especializacion;
         this.peluqueria = peluqueria;
         this.puntuacion= puntuacion;
+        this.mostrar=mostrar;
+        this.codigo=codigo;
     }
 }

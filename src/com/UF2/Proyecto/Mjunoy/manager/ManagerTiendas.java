@@ -15,7 +15,7 @@ public class ManagerTiendas {
 
 
         Tienda tienda = new Tienda(nombre, direccion, telefono, horario, web, especializacion,
-                peluqueria, 0);
+                peluqueria, 0,false,0);
         Database.insertTienda(tienda);
 
         return;
@@ -27,8 +27,10 @@ public class ManagerTiendas {
         List<Tienda> tiendas = new ArrayList<>();
 
         for (Tienda tienda1: todas_Tiendas) {
-            if (tienda1.nombre.equals(nombre)){
-                tiendas.add(tienda1);
+            if (tienda1.mostrar == true) {
+                if (tienda1.nombre.equals(nombre)) {
+                    tiendas.add(tienda1);
+                }
             }
 
         }
@@ -39,8 +41,10 @@ public class ManagerTiendas {
         List<Tienda> tiendas = new ArrayList<>();
 
         for (Tienda tienda1: todas_Tiendas) {
-            if (tienda1.especializacion.equals(especializacion)){
-                tiendas.add(tienda1);
+            if (tienda1.mostrar == true) {
+                if (tienda1.especializacion.equals(especializacion)) {
+                    tiendas.add(tienda1);
+                }
             }
 
         }
@@ -52,8 +56,10 @@ public class ManagerTiendas {
         List<Tienda> tiendas = new ArrayList<>();
 
         for (Tienda tienda1: todas_Tiendas) {
-            if (tienda1.puntuacion >= puntuacion ){
-                tiendas.add(tienda1);
+            if (tienda1.mostrar == true) {
+                if (tienda1.puntuacion >= puntuacion) {
+                    tiendas.add(tienda1);
+                }
             }
 
         }

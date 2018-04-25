@@ -18,6 +18,8 @@ public class Veterinario {
     public double chipado;
     public boolean urgencias24;
     public int puntuacion;
+    public boolean mostrar;
+    public int codigo;
 
     public Veterinario(){
 
@@ -26,7 +28,7 @@ public class Veterinario {
     public Veterinario(String nombre, String direccion, int telefono,
                        String horario, String web, String especializacion,
                        double visita_N,double visita_U, double vacuna,double chipado,
-                       boolean peluqueria, int puntuacion) {
+                       boolean peluqueria, int puntuacion,Boolean mostrar,int codigo) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -39,6 +41,8 @@ public class Veterinario {
         this.chipado = chipado;
         this.urgencias24 = peluqueria;
         this.puntuacion = puntuacion;
+        this.mostrar = mostrar;
+        this.codigo = codigo;
     }
 
 }

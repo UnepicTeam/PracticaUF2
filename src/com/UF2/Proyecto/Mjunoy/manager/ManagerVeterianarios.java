@@ -15,7 +15,7 @@ public class ManagerVeterianarios {
 
 
       Veterinario veterinario = new Veterinario(nombre,direccion,telefono,horario,web,especializacion,
-                                                visita_N,visita_U,vacuna,chipado,urgencias24,0);
+                                                visita_N,visita_U,vacuna,chipado,urgencias24,0,false,0);
 
       Database.insertVeterinario(veterinario);
 
@@ -27,10 +27,11 @@ public class ManagerVeterianarios {
         List<Veterinario> veterinarios = new ArrayList<>();
 
         for (Veterinario veterinario: todos_veterinarios) {
-            if (veterinario.nombre.equals(nombre)){
-                veterinarios.add(veterinario);
+            if (veterinario.mostrar == true) {
+                if (veterinario.nombre.equals(nombre)) {
+                    veterinarios.add(veterinario);
+                }
             }
-
         }
         return veterinarios;
     }
@@ -39,10 +40,11 @@ public class ManagerVeterianarios {
         List<Veterinario> veterinarios = new ArrayList<>();
 
         for (Veterinario veterinario: todos_veterinarios) {
-            if (veterinario.especializacion.equals(especializacion)){
-                veterinarios.add(veterinario);
+            if (veterinario.mostrar == true) {
+                if (veterinario.especializacion.equals(especializacion)) {
+                    veterinarios.add(veterinario);
+                }
             }
-
         }
         return veterinarios;
     }
@@ -52,8 +54,10 @@ public class ManagerVeterianarios {
         List<Veterinario> veterinarios = new ArrayList<>();
 
         for (Veterinario veterinario: todos_veterinarios) {
-            if (veterinario.puntuacion >= puntuacion ){
-                veterinarios.add(veterinario);
+            if (veterinario.mostrar == true) {
+                if (veterinario.puntuacion >= puntuacion) {
+                    veterinarios.add(veterinario);
+                }
             }
 
         }
