@@ -2,6 +2,10 @@ package com.UF2.Proyecto.Mjunoy.view;
 
 import com.UF2.Proyecto.Mjunoy.manager.ManagerTiendas;
 import com.UF2.Proyecto.Mjunoy.manager.ManagerVeterianarios;
+import com.UF2.Proyecto.Mjunoy.view.widget.EditText;
+import com.UF2.Proyecto.Mjunoy.view.widget.Menu;
+import com.UF2.Proyecto.Mjunoy.view.widget.Message;
+import com.UF2.Proyecto.Mjunoy.view.widget.Title;
 
 import java.util.Scanner;
 
@@ -10,23 +14,18 @@ public class PantallaRegitrarTienda {
     public void iniciar (){
 
         Scanner scanner = new Scanner(System.in);
+        Title title = new Title();
+        Message message = new Message();
+        EditText editText = new EditText();
+        Menu menu = new Menu();
 
-        System.out.println();
-        System.out.println("Registro de tiendas");
-        System.out.println();
+        title.show("Registro de tiendas");
 
-        System.out.println("Nombre de la tienda:");
-        String nombre = scanner.nextLine();
 
-        System.out.println("Introduzca la direccion:");
-        String direccion = scanner.nextLine();
-
-        System.out.println("Introduzca el numero de telefono:");
-        int telefono = scanner.nextInt();
-        scanner.nextLine();
-
-        System.out.println("Introduzca el horario:");
-        String horario = scanner.nextLine();
+        String nombre = editText.read("Nombre de la tienda:");
+        String direccion = editText.read("Introduzca la direccion:");
+        int telefono = editText.readInt("Introduzca el numero de telefono:");
+        String horario = editText.read("Introduzca el horario:");
 
         System.out.println("Introduzca su web:");
         String web = scanner.nextLine();
@@ -49,22 +48,18 @@ public class PantallaRegitrarTienda {
         ManagerTiendas.crearTienda(nombre,direccion,telefono,horario,web,especializacion,peluqueria);
 
 
-        System.out.println("Su tienda se a registrado de forma correcta");
+        message.showOk("Su tienda se a registrado de forma correcta");
 
 
         // una vez echo esto preguntaremos al usuario que desea hacer
 
         boolean salir=false;
         do {
-            System.out.println("Que desea hacer a continuacion:");
-            System.out.println();
-            System.out.println("1-Registrar otra tienda o veterinario.");
-            System.out.println("2-Ir al menu principal.");
-            System.out.println("3-Buscar tienda o veterinario");
-            System.out.println("4-Salir de la aplicacion");
-
-            // guardo en una variable la opcion seleccionada por el usuario
-            String opcion = scanner.nextLine();
+            String opcion = menu.show("Que desea hacer a continuacion:",
+                    "Registrar otra tienda o veterinario",
+                    "Ir al menu principal",
+                    "Buscar tienda o veterinario",
+                    "Salir de la aplicacion");
 
             //compruevo que a seleccionado el usuario
             if (opcion.equals("1")) {
@@ -79,9 +74,9 @@ public class PantallaRegitrarTienda {
                 new PantallaBuscar().iniciar();
             } else if (opcion.equals("4")){
                 System.out.println("Gracias por usar VeteriApp");
-                salir = true;
+                System.exit(0);
             }else{
-                System.out.println("Opcion incorrecta");
+                message.showError("Opcion incorrecta");
                 System.out.println("Seleccione otra vez");
             }
         }while (!salir);

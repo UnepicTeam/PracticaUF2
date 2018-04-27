@@ -12,29 +12,29 @@ public class PantallaAdministrarTienda {
         Scanner scanner = new Scanner(System.in);
         List<Tienda> tiendas = Database.selectAllTiendas();
         System.out.println
-                ( " | " + String.format("%-10s","codigo")
+                ( " | " + String.format("%-4s","codigo")
                         + " | " + String.format("%-10s","nombre")
                         + " | " + String.format("%-10s","direccion")
                         + " | " + String.format("%-10s", "telefono")
                         + " | " + String.format("%-10s", "horario")
                         + " | " + String.format("%-10s", "web")
                         + " | " + String.format("%-10s", "especializacion")
-                        + " | " + String.format("%-10s", "peluqueria")
-                        + " | " + String.format("%-10s", "puntuacion")
-                        + " | " + String.format("%-10s", "mostrar"));
+                        + " | " + String.format("%-6s", "peluqueria")
+                        + " | " + String.format("%-4s", "puntuacion")
+                        + " | " + String.format("%-6s", "mostrar"));
         for (Tienda tienda:tiendas){
             if (tienda.mostrar == false){
                 System.out.println
-                        ( " | " + String.format("%-10s", tienda.codigo)
+                        ( " | " + String.format("%-4s", tienda.codigo)
                                 + " | " + String.format("%-10s", tienda.nombre)
                                 + " | " + String.format("%-10s", tienda.direccion)
                                 + " | " + String.format("%-10s", tienda.telefono)
                                 + " | " + String.format("%-10s", tienda.horario)
                                 + " | " + String.format("%-10s", tienda.web)
                                 + " | " + String.format("%-10s", tienda.especializacion)
-                                + " | " + String.format("%-10s", tienda.peluqueria)
-                                + " | " + String.format("%-10s", tienda.puntuacion)
-                                + " | " + String.format("%-10s", tienda.mostrar));
+                                + " | " + String.format("%-6s", tienda.peluqueria)
+                                + " | " + String.format("%-4s", tienda.puntuacion)
+                                + " | " + String.format("%-6s", tienda.mostrar));
 
                 System.out.println("Desea autorizar esta tienda(si/no)?");
                 String opcion = scanner.nextLine();
@@ -67,7 +67,7 @@ public class PantallaAdministrarTienda {
                 new PantallaPrincipal().iniciar();
             } else if (opcion.equals("3")){
                 System.out.println("Gracias por usar Veteriapp.");
-                salir = true;
+                System.exit(0);
             }else {
                 System.out.println("Opcion incorrecta buelva a elegir.");
             }

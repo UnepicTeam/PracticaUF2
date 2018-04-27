@@ -47,7 +47,7 @@ public class PantallaBuscarTienda {
                 new PantallaPrincipal().iniciar();
             }else if (opcion.equals("6")){
                 System.out.println("Gracias por usar nuestra aplicacion");
-                salir=true;
+                System.exit(0);
             }else{
                 System.out.println("Opcion incorrecta seleccione otra vez");
             }

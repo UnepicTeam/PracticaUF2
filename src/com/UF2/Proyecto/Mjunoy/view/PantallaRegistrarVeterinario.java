@@ -95,7 +95,7 @@ public class PantallaRegistrarVeterinario {
                 new PantallaBuscar().iniciar();
             } else if (opcion.equals("4")){
                 System.out.println("Gracias por usar VeteriApp");
-                salir = true;
+                System.exit(0);
             }else{
                 System.out.println("Opcion incorrecta");
                 System.out.println("Seleccione otra vez");

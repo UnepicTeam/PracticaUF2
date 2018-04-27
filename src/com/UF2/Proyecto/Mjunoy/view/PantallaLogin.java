@@ -37,8 +37,7 @@ public class PantallaLogin {
                         new PantallaAdministrarVeterinario().iniciar();
                     } else if (opcion.equals("3")){
                         System.out.println("Gracias por usar VeteriApp");
-                        continuar=true;
-                        opc=true;
+                        System.exit(0);
                     }else{
                         System.out.println("Opcion incorrecta");
                         System.out.println("Seleccione otra vez");
@@ -58,8 +57,7 @@ public class PantallaLogin {
                         System.out.println("Recuerde que se distingue entre mayusculas y minusculas");
                     } else if (opcion.equals("2")) {
                         System.out.println("Gracias por usar VeteriApp");
-                        continuar = true;
-                        opc = true;
+                        System.exit(0);
                     } else {
                         System.out.println("Opcion incorrecta");
                         System.out.println("Seleccione otra vez");

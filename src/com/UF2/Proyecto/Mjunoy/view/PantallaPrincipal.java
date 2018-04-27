@@ -2,6 +2,7 @@ package com.UF2.Proyecto.Mjunoy.view;
 
 import com.UF2.Proyecto.Mjunoy.manager.ManagerTiendas;
 import com.UF2.Proyecto.Mjunoy.manager.ManagerVeterianarios;
+import com.UF2.Proyecto.Mjunoy.view.widget.Title;
 
 import java.util.Scanner;
 
@@ -9,12 +10,13 @@ public class PantallaPrincipal {
 
     public void iniciar(){
 
+        Title title = new Title();
         Scanner scanner = new Scanner(System.in);
         boolean salir=false;
         do {
 
             //doy la bienvenida al usuario y le muestro el menu
-            System.out.println("Bienvenido a veterinApp");
+            title.show("Bienvenido a veterinApp");
             System.out.println("Seleccione que desea hacer");
             System.out.println();
             System.out.println("1-Registrar veterinario/tienda.");
@@ -42,7 +44,7 @@ public class PantallaPrincipal {
                 new PantallaAdministrar().iniciar();
             }else if (opcion.equals("5")){
                 System.out.println("Gracias por usar VeteriApp");
-                salir = true;
+                System.exit(0);
             }else{
                 System.out.println("Opcion incorrecta");
                 System.out.println("Seleccione otra vez");

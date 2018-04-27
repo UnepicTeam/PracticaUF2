@@ -34,7 +34,7 @@ public class PantallaBuscar {
             new PantallaPrincipal().iniciar();
         }else if (opcion.equals("4")){
             System.out.println("Gracias por usar nuestra aplicacion");
-            salir=true;
+            System.exit(0);
         }else{
             System.out.println("Opcion incorrecta seleccione otra vez");
         }

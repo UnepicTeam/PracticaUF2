@@ -12,44 +12,44 @@ public class PantallaAdministrarVeterinario {
         Scanner scanner = new Scanner(System.in);
         List<Veterinario> veterinarios = Database.selectAllVeterinarios();
         System.out.println
-                ( " | " + String.format("%-10s","codigo")
+                ( " | " + String.format("%-4s","codigo")
                         + " | " + String.format("%-10s","nombre")
                         + " | " + String.format("%-10s","direccion")
                         + " | " + String.format("%-10s", "telefono")
                         + " | " + String.format("%-10s", "horario")
                         + " | " + String.format("%-10s", "web")
                         + " | " + String.format("%-10s", "especializacion")
-                        + " | " + String.format("%-10s", "visita_N")
-                        + " | " + String.format("%-10s", "visita_U")
-                        + " | " + String.format("%-10s", "vacuna")
-                        + " | " + String.format("%-10s", "chipado")
-                        + " | " + String.format("%-10s", "urgencias24")
-                        + " | " + String.format("%-10s", "puntuacion")
-                        + " | " + String.format("%-10s", "mostrar"));
+                        + " | " + String.format("%-6s", "visita_N")
+                        + " | " + String.format("%-6s", "visita_U")
+                        + " | " + String.format("%-6s", "vacuna")
+                        + " | " + String.format("%-6s", "chipado")
+                        + " | " + String.format("%-6s", "urgencias24")
+                        + " | " + String.format("%-4s", "puntuacion")
+                        + " | " + String.format("%-6s", "mostrar"));
         for (Veterinario veterinario: veterinarios){
             if (veterinario.mostrar == false){
                 System.out.println
-                        ( " | " + String.format("%-10s", veterinario.codigo)
+                        ( " | " + String.format("%-4s", veterinario.codigo)
                                 + " | " + String.format("%-10s", veterinario.nombre)
                                 + " | " + String.format("%-10s", veterinario.direccion)
                                 + " | " + String.format("%-10s", veterinario.telefono)
                                 + " | " + String.format("%-10s", veterinario.horario)
                                 + " | " + String.format("%-10s", veterinario.web)
                                 + " | " + String.format("%-10s", veterinario.especializacion)
-                                + " | " + String.format("%-10s", veterinario.visita_N)
-                                + " | " + String.format("%-10s", veterinario.visita_U)
-                                + " | " + String.format("%-10s", veterinario.vacuna)
-                                + " | " + String.format("%-10s", veterinario.chipado)
-                                + " | " + String.format("%-10s", veterinario.urgencias24)
-                                + " | " + String.format("%-10s", veterinario.puntuacion)
-                                + " | " + String.format("%-10s", veterinario.mostrar));
+                                + " | " + String.format("%-6s", veterinario.visita_N)
+                                + " | " + String.format("%-6s", veterinario.visita_U)
+                                + " | " + String.format("%-6s", veterinario.vacuna)
+                                + " | " + String.format("%-6s", veterinario.chipado)
+                                + " | " + String.format("%-6s", veterinario.urgencias24)
+                                + " | " + String.format("%-4s", veterinario.puntuacion)
+                                + " | " + String.format("%-6s", veterinario.mostrar));
 
                 System.out.println("Desea autorizar este Veterinario(si/no)?");
                 String opcion = scanner.nextLine();
 
                 if (opcion.equals("si")){
 
-                    Boolean autorizar = Database.autorizarTienda(true,veterinario.codigo);
+                    Boolean autorizar = Database.autorizarVeterinario(true,veterinario.codigo);
                     if (autorizar){
                         System.out.println("Tienda autorizada correctamente.");
                     }
@@ -75,7 +75,7 @@ public class PantallaAdministrarVeterinario {
                 new PantallaPrincipal().iniciar();
             } else if (opcion.equals("3")){
                 System.out.println("Gracias por usar Veteriapp.");
-                salir = true;
+                System.exit(0);
             }else {
                 System.out.println("Opcion incorrecta buelva a elegir.");
             }

@@ -28,7 +28,7 @@ public class ManagerTiendas {
 
         for (Tienda tienda1: todas_Tiendas) {
             if (tienda1.mostrar == true) {
-                if (tienda1.nombre.equals(nombre)) {
+                if (tienda1.nombre.toLowerCase().contains(nombre.toLowerCase())) {
                     tiendas.add(tienda1);
                 }
             }
@@ -42,7 +42,7 @@ public class ManagerTiendas {
 
         for (Tienda tienda1: todas_Tiendas) {
             if (tienda1.mostrar == true) {
-                if (tienda1.especializacion.equals(especializacion)) {
+                if (tienda1.especializacion.toLowerCase().contains(especializacion.toLowerCase())) {
                     tiendas.add(tienda1);
                 }
             }

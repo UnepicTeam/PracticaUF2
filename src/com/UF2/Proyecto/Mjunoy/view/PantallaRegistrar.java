@@ -42,7 +42,7 @@ public class PantallaRegistrar {
                 new PantallaPrincipal().iniciar();
             } else if (opcion.equals("4")) {
                 System.out.println("Gracias por usar VeteriApp");
-                salir=true;
+                System.exit(0);
             } else {
                 System.out.println("Opcion incorrecta vuelva a seleccionar:");
             }

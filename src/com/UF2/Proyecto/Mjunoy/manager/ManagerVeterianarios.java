@@ -28,7 +28,7 @@ public class ManagerVeterianarios {
 
         for (Veterinario veterinario: todos_veterinarios) {
             if (veterinario.mostrar == true) {
-                if (veterinario.nombre.equals(nombre)) {
+                if (veterinario.nombre.toLowerCase().contains(nombre.toLowerCase())) {
                     veterinarios.add(veterinario);
                 }
             }
@@ -41,7 +41,7 @@ public class ManagerVeterianarios {
 
         for (Veterinario veterinario: todos_veterinarios) {
             if (veterinario.mostrar == true) {
-                if (veterinario.especializacion.equals(especializacion)) {
+                if (veterinario.especializacion.toLowerCase().contains(especializacion.toLowerCase())) {
                     veterinarios.add(veterinario);
                 }
             }

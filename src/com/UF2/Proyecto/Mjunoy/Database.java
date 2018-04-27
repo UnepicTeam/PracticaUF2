@@ -221,7 +221,7 @@ public class Database {
                         rs.getDouble("visita_U"),
                         rs.getDouble("vacuna"),
                         rs.getDouble("chipado"),
-                        rs.getBoolean("peluqueria"),
+                        rs.getBoolean("urgencias24"),
                         rs.getInt("puntuacion"),
                         rs.getBoolean("mostrar"),
                         rs.getInt("codigo_V"));
@@ -303,7 +303,7 @@ public class Database {
     public static boolean autorizarVeterinario(boolean mostrar,int codigo){
         boolean resultado=false;
 
-        String sql ="UPDATE veterinarios set mostrar= ? where codigo_T = ?;";
+        String sql ="UPDATE veterinarios set mostrar= ? where codigo_V = ?;";
         try (PreparedStatement pstmt= conn.prepareStatement(sql)){
             pstmt.setBoolean(1,mostrar);
             pstmt.setInt(2,codigo);
