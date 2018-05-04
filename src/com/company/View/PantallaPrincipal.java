@@ -10,7 +10,18 @@ public class PantallaPrincipal {
         do {
 
             //doy la bienvenida al usuario y le muestro el menu
-            System.out.println("Bienvenido a veterinApp");
+            System.out.println("                       __");
+            System.out.println("                     .'  '.");
+            System.out.println("                 _.-'/  |   \\");
+            System.out.println("    ,        _.-\'  ,|  /  0 `-.");
+            System.out.println("    |\\    .-\"      `--  -.__.'=====================-,");
+            System.out.println("    \\ '-'`        .___.--._)=========================|");
+            System.out.println("     \\            .'      |                          |");
+            System.out.println("      |     /,_.-'         |       BIENVENIDOS        |");
+            System.out.println("     _/   _.'(             |            A             |");
+            System.out.println("    / ,-'   \\\\           |        VeterinApp        |");
+            System.out.println("    \\\\      `-'          |                          |");
+            System.out.println("     `-'                   '--------------------------'");
             System.out.println("Seleccione que desea hacer");
             System.out.println();
             System.out.println("1-Registrar veterinario/tienda.");

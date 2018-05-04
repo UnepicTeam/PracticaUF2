@@ -22,7 +22,7 @@ public class ManagerVeterinarios {
         veterianario.horario=horario;
         veterianario.web=web;
         veterianario.especializacion=especializacion;
-        veterianario.precios=precios;
+        //veterianario.precios=precios;
         veterianario.urgencias24=urgencias24;
 
         veterinarios.add(veterianario);
